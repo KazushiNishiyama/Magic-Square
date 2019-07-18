@@ -1,0 +1,27 @@
+%4×4 magic square
+%?- magic(A,B,C,D).
+magic([A1,A2,A3,A4],[B1,B2,B3,B4],[C1,C2,C3,C4],[D1,D2,D3,D4]) :-
+select(A1,[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16],L1),
+select(A2,L1,L2),
+select(A3,L2,L3),
+select(A4,L3,L4),
+A1+A2+A3+A4=:=34,
+select(B1,L4,L5),
+select(C1,L5,L6),
+select(D1,L6,L7),
+A1+B1+C1+D1=:=34,
+select(B2,L7,L8),
+select(B3,L8,L9),
+select(B4,L9,L10),
+B1+B2+B3+B4=:=34,
+select(C2,L10,L11),
+select(D2,L11,L12),
+A2+B2+C2+D2=:=34,
+select(C3,L12,L13),
+select(C4,L13,L14),
+C1+C2+C3+C4=:=34,
+select(D3,L14,L15),
+A3+B3+C3+D3=:=34,
+select(D4,L15,[]),
+D1+D2+D3+D4=:=34,
+A4+B4+C4+D4=:=34.
